@@ -104,8 +104,8 @@ public class Enemy : MonoBehaviour
             if (cutType == slashPattern)
             {
                 // Enemy loses Health
-                animator.SetTrigger("Hurt");
                 currentHealth -= damage;
+                animator.SetTrigger("Hurt");
                 if (currentHealth <= 0)
                 {
                     Die();

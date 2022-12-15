@@ -14,12 +14,12 @@ public class Slashes : MonoBehaviour
         if (transform.position.x > 0)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
-            starting = new Vector3(transform.position.x - 1.1f, -1f, 0f);
+            starting = new Vector3(transform.position.x - 1.1f, -1.3f, 0f);
         }
         // Checks if pattern spawned on the left
         else
         {
-            starting = new Vector3(transform.position.x + 1.1f, -1f, 0f);
+            starting = new Vector3(transform.position.x + 1.1f, -1.3f, 0f);
         }
         
         // Moves pattern to starting position

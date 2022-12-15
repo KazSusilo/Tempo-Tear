@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     // Animator Variable
     public Animator animator;
+    private char currentOrientation = 'r';
 
     // Player Object
     public GameObject player;
@@ -34,6 +35,22 @@ public class Player : MonoBehaviour
     }
 
 
+    // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (currentOrientation == 'l')
+            {
+                OrientatePlayer('r');
+            } else
+            {
+                OrientatePlayer('l');
+            }
+        }
+    }
+
+
     // Orientates player to enemy's location
     void OrientatePlayer(char enemyLoc)
     {
@@ -47,6 +64,8 @@ public class Player : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.position = new Vector3(.24f, transform.position.y, transform.position.z);
         }
+
+        currentOrientation = enemyLoc;
     }
 
 
@@ -142,7 +161,8 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         int enemyCollisions = collision.gameObject.GetComponent<Enemy>().numOfCollisions;
-        if (collision.gameObject.tag == "Enemy" && enemyCollisions == 2)
+        bool enemyDead = collision.gameObject.GetComponent<Enemy>().isDead;
+        if (collision.gameObject.tag == "Enemy" && enemyCollisions == 2 && !enemyDead)
         {
             char enemyLoc = collision.gameObject.GetComponent<Enemy>().location;
             TakeDamage(20, enemyLoc);

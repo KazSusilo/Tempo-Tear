@@ -28,8 +28,8 @@ public class Indicators : MonoBehaviour
         if (transform.position.x != 0 && Level.level != 0)
         {
             transform.position = Vector3.MoveTowards(transform.position,
-            new Vector3(0, -1.235f, 0), speed * Time.deltaTime);
-
+            new Vector3(GameObject.Find("Indicator").transform.position.x,
+            transform.position.y, transform.position.z), speed * Time.deltaTime);
         } 
     }
 
