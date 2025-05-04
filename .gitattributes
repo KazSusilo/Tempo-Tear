@@ -2,4 +2,4 @@
 #Builds/** linguist-generated
 
 # Ignore shader files from language stats
-Assets/TextMesh?Pro/** linguist-generated
+#Assets/TextMesh?Pro/** linguist-generated
