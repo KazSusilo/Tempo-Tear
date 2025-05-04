@@ -2,4 +2,5 @@
 Builds/** linguist-detectable=false
 
 # Ignore shader files from language stats
-"Assets/TextMesh Pro/**" linguist-generated
+"Assets/TextMesh Pro/Shaders/**.shader" linguist-generated
+"Assets/TextMesh Pro/Shaders/**.hlsl" linguist-generated
