@@ -1,1 +1,19 @@
-Assets/TextMesh?Pro/** linguist-generated
+# Ignore build files from language stats
+Build/** linguist-vendored
+
+# Ignore Unity-generated shader files from language stats
+Assets/**.shader linguist-generated
+Assets/**.cginc linguist-generated
+Assets/**.hlsl linguist-generated
+
+# Ignore ML-Agents models if not hand-written
+Assets/ML-Agents/** linguist-generated
+
+# Ignore ASP.NET-like configs if present
+*.asax linguist-generated
+*.aspx linguist-generated
+*.cshtml linguist-generated
+*.vbhtml linguist-generated
+
+# Treat only your C# code as primary
+*.cs linguist-language=C#
